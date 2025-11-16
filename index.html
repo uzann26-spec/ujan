@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ujan</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+    }
+
+    .icon-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      border: 2px solid #333;
+      transition: 0.2s;
+    }
+
+    .icon:hover {
+      border-color: #888;
+      transform: scale(1.05);
+    }
+
+    .label {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon-box" onclick="window.open('https://open.spotify.com/playlist/3jzO7WUkSCCSuTxDWA6emZ?si=4Z8ecNrCSEWyQHUQ-9wzew', '_blank')">
+      <div class="icon">🎸</div>
+      <div class="label">Spotify</div>
+    </div>
+
+    <div class="icon-box" onclick="window.open('https://secreto.site/amyfw7', '_blank')">
+      <div class="icon">🛹</div>
+      <div class="label">Messages</div>
+    </div>
+  </div>
+</body>
+</html>
