@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ujan</title>
+  <title>syahluzan</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #000;
+      background: url('https://i.ibb.co/5jFdvR4/black-wings-background.jpg') center/cover no-repeat;
       color: #fff;
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      backdrop-filter: brightness(0.6);
+      overflow: hidden;
     }
 
     .container {
       display: flex;
-      flex-direction: column;
-      gap: 30px;
+      flex-direction: row;
+      gap: 40px;
       text-align: center;
+      position: relative;
+      z-index: 5;
     }
 
     .icon-box {
@@ -33,31 +37,51 @@
     }
 
     .icon {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       border-radius: 20px;
       background: #111;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 40px;
-      border: 2px solid #333;
+      border: 2px solid #444;
+      overflow: hidden;
       transition: 0.2s;
     }
 
     .icon:hover {
-      border-color: #888;
-      transform: scale(1.05);
+      border-color: #bbb;
+      transform: scale(1.07);
     }
 
     .label {
       font-size: 18px;
     }
+
+    .section {
+      display: none;
+    }
+
+    .back-btn {
+      margin-bottom: 20px;
+      cursor: pointer;
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      justify-items: center;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="icon-box" onclick="window.open('https://open.spotify.com/playlist/3jzO7WUkSCCSuTxDWA6emZ?si=4Z8ecNrCSEWyQHUQ-9wzew', '_blank')">
+  <div class="container" id="main-menu">
+    <div class="icon-box" onclick="window.open('https://open.spotify.com/playlist/5MycFW0xtE4EHrHcr7UnZa?si=u_B0cNETSJ-fusnCJL5HMQ', '_blank')">
       <div class="icon">🎸</div>
       <div class="label">Spotify</div>
     </div>
@@ -66,6 +90,84 @@
       <div class="icon">🛹</div>
       <div class="label">Messages</div>
     </div>
+
+    <div class="icon-box" onclick="showSection('hobi')">
+      <div class="icon">🔥</div>
+      <div class="label">Hobi</div>
+    </div>
+
+    <div class="icon-box" onclick="showSection('film')">
+      <div class="icon">🎥</div>
+      <div class="label">Film</div>
+    </div>
+
+    <div class="icon-box" onclick="showSection('buku')">
+      <div class="icon">📚</div>
+      <div class="label">Buku</div>
+    </div>
   </div>
+
+  <!-- Section Hobi -->
+  <div class="container section" id="hobi">
+    <div class="back-btn" onclick="goBack()">⬅ Kembali</div>
+    <div class="grid">
+      <div class="icon-box"><div class="icon">🎸</div><div class="label">Gitar</div></div>
+      <div class="icon-box"><div class="icon">🥋</div><div class="label">Karate</div></div>
+      <div class="icon-box"><div class="icon">📚</div><div class="label">Baca Buku</div></div>
+      <div class="icon-box"><div class="icon">🏃</div><div class="label">Lari</div></div>
+    </div>
+  </div>
+
+  <!-- Section Film -->
+  <div class="container section" id="film">
+    <div class="back-btn" onclick="goBack()">⬅ Kembali</div>
+    <div class="grid">
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/6w1V0hP/aman.jpg"></div><div class="label">A Man Called Otto</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/QjB0Dhp/mydemon.jpg"></div><div class="label">My Demon</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/Mg5WnKv/kingtheland.jpg"></div><div class="label">King The Land</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/NTC6ZCL/lovelyrunner.jpg"></div><div class="label">Lovely Runner</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/6mT1WP2/sweethome.jpg"></div><div class="label">Sweet Home</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/Vt91dL7/hacksaw.jpg"></div><div class="label">Hacksaw Ridge</div></div>
+    </div>
+  </div>
+
+  <!-- Section Buku -->
+  <div class="container section" id="buku">
+    <div class="back-btn" onclick="goBack()">⬅ Kembali</div>
+    <div class="grid">
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/8jwykD8/sisi-tergelap.jpg"></div><div class="label">Sisi Tergelap Surga</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/1mTG1f7/stoicism.jpg"></div><div class="label">The Art of Stoicism</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/42dyGQZ/mieayam.jpg"></div><div class="label">Seporsi Mi Ayam</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/djTrvLN/eknath.jpg"></div><div class="label">Eknath</div></div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.getElementById('main-menu').style.display = 'none';
+      document.getElementById(id).style.display = 'flex';
+    }
+    function goBack() {
+      document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+      document.getElementById('main-menu').style.display = 'flex';
+    }
+  </script>
+  <!-- Animated Elements -->
+  <img src="https://i.ibb.co/tcvs7Lx/lightning.gif" style="position:absolute; top:10%; left:5%; width:120px; opacity:0.7; animation: flicker 2s infinite;">
+  <img src="https://i.ibb.co/tJF8tBJ/wing-left.png" style="position:absolute; bottom:10%; left:0; width:180px; opacity:0.4; animation: float 4s ease-in-out infinite;">
+  <img src="https://i.ibb.co/k2x3y3F/wing-right.png" style="position:absolute; bottom:10%; right:0; width:180px; opacity:0.4; animation: float 4s ease-in-out infinite reverse;">
+
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+  </style>
 </body>
 </html>
