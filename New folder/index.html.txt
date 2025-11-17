@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>syahluzan</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0; /* cite: 2 */
+      /* Background Image & Effects */
+      background: url('https://i.ibb.co/5jFdvR4/black-wings-background.jpg') center/cover no-repeat;
+      backdrop-filter: brightness(0.6); /* cite: 3 */
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Main Container for Icons/Sections */
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 40px; /* cite: 4 */
+      text-align: center;
+      position: relative;
+      z-index: 5; /* Ensures content is above animated elements */
+    }
+
+    /* Icon Box Layout */
+    .icon-box {
+      display: flex;
+      flex-direction: column; /* cite: 5 */
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    /* Individual Icon Styling */
+    .icon {
+      width: 100px;
+      height: 100px; /* cite: 6 */
+      border-radius: 20px;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      border: 2px solid #444;
+      overflow: hidden;
+      transition: 0.2s; /* cite: 7 */
+    }
+
+    /* Icon Hover Effect */
+    .icon:hover {
+      border-color: #bbb;
+      transform: scale(1.07); /* cite: 7 */
+    }
+
+    /* Label Text Styling */
+    .label {
+      font-size: 18px; /* cite: 9 */
+    }
+
+    /* Section Visibility */
+    .section {
+      display: none; /* cite: 10 */
+    }
+
+    /* Back Button Styling */
+    .back-btn {
+      margin-bottom: 20px;
+      cursor: pointer;
+      font-size: 20px;
+      padding: 10px; /* cite: 11 */
+    }
+
+    /* Grid Layout for Sections */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      justify-items: center;
+      margin-top: 20px; /* cite: 12 */
+    }
+
+    /* Styles for Images inside Icons */
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* --- ANIMATION KEYFRAMES (Moving Icons/Symbols) --- */
+
+    /* Float Animation for Wings */
+    @keyframes float {
+      0% { transform: translateY(0); /* cite: 18 */ }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); /* cite: 19 */ }
+    }
+
+    /* Flicker Animation for Lightning */
+    @keyframes flicker {
+      0%, 100% { opacity: 0.7; /* cite: 20 */ }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="main-menu">
+    <div class="icon-box" onclick="window.open('https://open.spotify.com/playlist/5MycFW0xtE4EHrHcr7UnZa?si=u_B0cNETSJ-fusnCJL5HMQ', '_blank')">
+      <div class="icon">🎶</div>
+      <div class="label">Spotify</div>
+    </div>
+
+    <div class="icon-box" onclick="window.open('https://secreto.site/amyfw7', '_blank')">
+      <div class="icon">🛹</div>
+      <div class="label">Messages</div>
+    </div>
+
+    <div class="icon-box" onclick="showSection('hobi')">
+      <div class="icon">🔥</div>
+      <div class="label">Hobi</div>
+    </div>
+
+    <div class="icon-box" onclick="showSection('film')">
+      <div class="icon">🎥</div>
+      <div class="label">Film</div> </div>
+
+    <div class="icon-box" onclick="showSection('buku')">
+      <div class="icon">📚</div>
+      <div class="label">Buku</div>
+    </div>
+  </div>
+
+  <div class="container section" id="hobi">
+    <div class="back-btn" onclick="goBack()">⬅ Kembali</div>
+    <div class="grid">
+      <div class="icon-box"><div class="icon">🎸</div><div class="label">Gitar</div></div>
+      <div class="icon-box"><div class="icon">🥋</div><div class="label">Karate</div></div>
+      <div class="icon-box"><div class="icon">📚</div><div class="label">Baca Buku</div></div>
+      <div class="icon-box"><div class="icon">🏃</div><div class="label">Lari</div></div>
+    </div>
+  </div>
+
+  <div class="container section" id="film"> <div class="back-btn" onclick="goBack()">⬅ Kembali</div>
+    <div class="grid">
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/6w1V0hP/aman.jpg"></div><div class="label">A Man Called Otto</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/QjB0Dhp/mydemon.jpg"></div><div class="label">My Demon</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/Mg5WnKv/kingtheland.jpg"></div><div class="label">King The Land</div></div>
+      <div class="icon-box"><div class="icon"><img src="https://i.ibb.co/NTC6ZCL/lovelyrunner.jpg"></div><div class="label">Lovely Runner</div></div>
+      <div class="icon-box"><div class="icon"><img src="
